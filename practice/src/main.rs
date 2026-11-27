@@ -4,6 +4,7 @@ mod order_processor;
 mod data_structures;
 use ownership::ownership_pipeline;
 use std::io;
+mod comments;
 
 fn main() {
     let name: String = cli_interface();
@@ -32,6 +33,7 @@ fn cli_interface() -> String {
 }
 
 // Removes leading/trailing whitespace, converts to lowercase
+// Rust allows for function declaration after use (lower in file)
 fn clean_string(raw: &mut String) {
     let cleaned = raw.trim().to_lowercase();
     raw.clear();
